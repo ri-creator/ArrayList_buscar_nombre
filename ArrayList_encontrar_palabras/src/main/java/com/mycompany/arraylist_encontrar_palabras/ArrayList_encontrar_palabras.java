@@ -6,6 +6,9 @@
 package com.mycompany.arraylist_encontrar_palabras;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  *
  * @author ricar
@@ -16,7 +19,8 @@ public class ArrayList_encontrar_palabras {
         ArrayList<String> array_lista=new ArrayList<>(){};
         ArrayList<Integer> array_cont=new ArrayList<>(){};
         String usuario;
-        int cont=0;
+        int cont=0,indice,indice2;
+        boolean encontrado;
         Scanner teclado=new Scanner(System.in);
         array_lista.add("ricardo");
         array_lista.add("anabel");
@@ -47,5 +51,22 @@ public class ArrayList_encontrar_palabras {
         array_cont.clear();
         }
         while(!"S".equals(usuario)); 
+        
+        //otra forma de hacerlo con funciones directas***************************************
+        
+         do{
+        System.out.println("Que nombre desea buscar?o pulse S para salir");
+        usuario=teclado.next();
+        
+        indice=array_lista.indexOf(usuario);
+        encontrado=array_lista.contains(usuario);
+        if(encontrado){
+                       System.out.print("Se ha encoentrado "+usuario+ "en la posicion "+indice);
+                       
+                      }
+        else{System.out.println("No se ha encontrado "+usuario);}
+        }
+        while(!"S".equals(usuario)); 
+        
     }
 }
